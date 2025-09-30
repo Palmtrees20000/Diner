@@ -1,0 +1,125 @@
+#headerWrapper {
+    background: #f5f5f5;
+    padding: 0.75rem 0;
+}
+
+header, nav, main {
+    max-width: 960px;
+    margin: auto;
+}
+
+/* Hide hamburger menu on large screens */
+#menuButton {
+    display: none;
+}
+
+/* Show navigation menu horizontally on large screens */
+nav {
+    ul#mainNav {
+        display: flex !important; /* Always show on large screens */
+        justify-content: flex-end;
+        background: transparent;
+        
+        li a {
+            padding: 1rem 2rem;
+            color: white;
+            font-weight: 600;
+            border-radius: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #FFD700;
+            }
+            
+            &:focus {
+                outline: 2px solid white;
+                outline-offset: -2px;
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #FFD700;
+            }
+        }
+        
+        li.active a {
+            background-color: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+        }
+    }
+}
+
+.company-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #A1683A;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+#navWrapper {
+    background: $primaryColor;
+    width: 100%;
+    padding: unset;
+    ///min-height: 64px;
+}
+
+nav ul li.active a{
+    background: none;
+        color: #FFD700;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+}
+nav ul li a:hover {
+    background: none;
+        color: #FFD700;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+}
+
+div.allcards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    section {
+        img {
+            height: 200px; /* Back to full height on large screens */
+        }
+    }
+}
+
+footer {
+    max-width: 960px;
+    margin: auto;
+    
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 3rem;
+        text-align: left;
+        
+        section.contact {
+            flex: 1;
+            
+            p {
+                justify-content: flex-start;
+            }
+        }
+        
+        section.location {
+            flex: 1;
+            text-align: center;
+            
+            address {
+                font-style: italic;
+            }
+        }
+        
+        section.social {
+            flex: 1;
+            justify-content: flex-end;
+        }
+    }
+}

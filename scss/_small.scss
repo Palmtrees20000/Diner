@@ -1,0 +1,286 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+}
+
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    color: $primaryColor;
+}
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {
+    border-bottom: 1px solid $primaryColor;
+    background: #f5f5f5;
+    color: $primaryColor;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 30px auto 44px;
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: $gutter;
+    .company-name {
+        font-size: 1.6rem;
+        font-weight: $normalWeight;
+        color: $primaryColor;
+    }
+}
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+
+#navWrapper {
+    background-color: $primaryColor;
+}
+
+#menuButton {
+    display: block;
+    border: none;
+    background: $primaryColor;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    
+    &:hover {
+        background-color: darken($primaryColor, 10%);
+    }
+    
+    &:focus {
+        outline: 2px solid white;
+        outline-offset: -2px;
+    }
+}
+
+nav {
+    /* Remove any background hover effects from nav container */
+    
+    ul#mainNav {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: none; /* Hidden by default on small screens */
+        background-color: $primaryColor;
+        
+        /* Show when open class is added */
+        &.open {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            a {
+                color: white;
+                text-align: left;
+                text-decoration: none;
+                display: block;
+                padding: 1rem;
+                transition: background-color 0.3s ease;
+                
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+                
+                &:focus {
+                    outline: 2px solid white;
+                    outline-offset: -2px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+            
+            &.active a {
+                color: #FFD700;
+                font-weight: $normalWeight;
+                background-color: rgba(255, 215, 0, 0.1);
+            }
+        }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 400px;
+        opacity: 1;
+    }
+}
+
+
+
+// --------------------------- MAIN CONTENT AREA ---------------------------
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primaryColor;
+    padding: $gutter;
+}
+
+main {
+    h1 {
+        padding: 1rem $gutter .5rem $gutter;
+        font-size: 1.5rem;
+        color: $secondaryColor;
+        font-weight: $lightWeight;
+    }
+    p {
+        padding: .5rem $gutter;
+        color: #333;
+        line-height: $leading;
+    }
+} 
+
+div.allcards {
+    padding: 0 $gutter;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+    
+    section {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        img {
+            width: 100%;
+            height: 200px; /* Consistent aspect ratio */
+            object-fit: cover;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            background-color: transparent;
+            font-size: 1.25rem;
+            text-align: left;
+            color: $primaryColor;
+            font-weight: 600;
+            margin: 0;
+            padding: 1rem 1.5rem 0.5rem 1.5rem;
+        }
+        
+        p {
+            font-style: normal;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0 1.5rem 1rem 1.5rem;
+        }
+        
+        a {
+            display: inline-block;
+            background-color: $primaryColor;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-align: center;
+            margin: 0 1.5rem 1.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            
+            &:hover {
+                background-color: darken($primaryColor, 10%);
+            }
+            
+            &:focus {
+                outline: 2px solid $primaryColor;
+                outline-offset: 2px;
+            }
+        }
+    }
+} // end allcards
+// end main
+// begin the footer
+
+#footerWrapper {
+    background-color: $primaryColor;
+    color: $greyColor;
+}
+
+footer {
+    font-size: .85rem;
+    padding: 1rem $gutter;
+    color: $greyColor;
+    text-align: center;
+    line-height: $leading;
+    a {
+        color: $greyColor;
+    }
+    section.contact {
+        p {
+            font-size: 1.2rem;
+            margin: .5rem;
+        }
+        ion-icon {
+            color: red;
+            padding-right: 5px;
+        }
+    }
+    section.social {
+        display: flex;
+        justify-content: center;
+        a {
+            display: block;
+            border: solid 1px $greyColor;
+            font-size: 2rem;
+            margin: .5rem;
+            padding: .5rem;
+            color: purple;
+            line-height: 100%;
+            &:hover {
+                background-color: $secondaryColor;
+            }
+        }
+    }
+    section.location {
+        font-size: 1.5rem;
+    }
+    p.legal {
+        margin: 0;
+        font-weight: $lightWeight;
+        text-align: center;
+    }
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+
+

@@ -1,0 +1,56 @@
+
+/* NAVIGATION (medium breakpoint - still using hamburger menu) */
+#menuButton {
+    display: block; /* Keep hamburger visible on medium screens */
+}
+
+nav {
+    ul#mainNav {
+        display: none; /* Keep hidden by default */
+        
+        &.open {
+            display: block; /* Show when open class is added to ul */
+        }
+        
+        li a {
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #FFD700;
+            }
+            
+            &:focus {
+                outline: 2px solid white;
+                outline-offset: -2px;
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+        
+        li.active a {
+            color: #FFD700;
+            background-color: rgba(255, 215, 0, 0.1);
+        }
+    }
+}
+
+div.allcards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    section {
+        img {
+            height: 180px; /* Slightly smaller on medium screens */
+        }
+    }
+}
+
+footer div {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    
+}
