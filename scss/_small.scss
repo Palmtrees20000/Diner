@@ -266,13 +266,6 @@ footer {
     }
     
     section.contact {
-        h3 {
-            font-size: 1.1rem;
-            margin: 0 0 1rem 0;
-            color: black;
-            font-weight: 600;
-        }
-        
         .contact-item {
             display: flex;
             align-items: center;
@@ -302,13 +295,6 @@ footer {
     }
     
     section.social {
-        h3 {
-            font-size: 1.1rem;
-            margin: 0 0 1rem 0;
-            color: black;
-            font-weight: 600;
-        }
-        
         .social-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* First row: 4 icons */
