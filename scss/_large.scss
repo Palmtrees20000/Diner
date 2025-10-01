@@ -20,29 +20,15 @@ nav {
         justify-content: flex-end;
         background: transparent;
         
+        /* Large-screen specific overrides for navigation links */
         li a {
-            padding: 1rem 2rem;
-            color: white;
-            font-weight: 600;
-            border-radius: 16px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-                color: #FFD700;
-            }
-            
-            &:focus {
-                outline: 2px solid white;
-                outline-offset: -2px;
-                background-color: rgba(255, 255, 255, 0.1);
-                color: #FFD700;
-            }
+            padding: 1rem 2rem; /* Larger padding for desktop */
+            font-weight: 600; /* Bolder text for desktop */
         }
         
+        /* Override active state font weight for large screens */
         li.active a {
-            background-color: rgba(255, 215, 0, 0.1);
-            color: #FFD700;
+            font-weight: 600; /* Bolder active state for desktop */
         }
     }
 }
@@ -62,64 +48,94 @@ nav {
     ///min-height: 64px;
 }
 
-nav ul li.active a{
-    background: none;
-        color: #FFD700;
-    padding: 1rem 2rem;
-    border-radius: 16px;
-}
-nav ul li a:hover {
-    background: none;
-        color: #FFD700;
-    padding: 1rem 2rem;
-    border-radius: 16px;
-}
-
 div.allcards {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns on large screens */
+    gap: 2rem; /* Consistent 2rem gap */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 4rem auto; /* Center horizontally and add generous bottom margin */
+    padding: 0 3rem; /* Add side padding on large screens */
     
     section {
         img {
-            height: 200px; /* Back to full height on large screens */
+            height: 200px; /* Consistent height across breakpoints */
         }
     }
 }
 
+/* Maintain 10px left padding on large screens */
+#mainWrapper > p {
+    padding-left: 10px;
+}
+
+main {
+    padding-left: 10px; /* Add left padding to main */
+}
+
 footer {
-    max-width: 960px;
+    max-width: 1200px;
     margin: auto;
+    padding: 3rem 2rem;
     
     .footer-content {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 3rem;
+        align-items: center; /* Vertically center all three columns */
+        gap: 4rem;
         text-align: left;
+    }
+    
+    section.contact {
+        flex: 1; /* Take equal space */
         
-        section.contact {
-            flex: 1;
+        .contact-item {
+            justify-content: flex-start;
+            margin-bottom: 0.4rem;
             
-            p {
-                justify-content: flex-start;
+            ion-icon {
+                font-size: 1rem; /* Smaller icons on desktop */
+            }
+            
+            span, a {
+                font-size: 0.9rem; /* Smaller text on desktop */
             }
         }
+    }
+    
+    section.social {
+        flex: 1; /* Take equal space */
+        display: flex;
+        justify-content: center;
         
-        section.location {
-            flex: 1;
-            text-align: center;
+        .social-grid {
+            display: flex; /* Single horizontal row */
+            flex-direction: row;
+            gap: 0.75rem;
+            max-width: none; /* Remove width restriction */
             
-            address {
-                font-style: italic;
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.4rem;
             }
         }
+    }
+    
+    section.location {
+        flex: 1; /* Take equal space */
+        text-align: right;
         
-        section.social {
-            flex: 1;
-            justify-content: flex-end;
+        h3 {
+            font-size: 1.3rem; /* Larger text on desktop */
+            text-align: right;
         }
+        
+        address {
+            font-size: 1rem; /* Larger text on desktop */
+            text-align: right;
+        }
+    }
+    
+    p.legal {
+        margin-top: 3rem; /* More spacing on desktop */
     }
 }

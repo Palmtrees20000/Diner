@@ -27,7 +27,8 @@
 <body>
     <div id="headerWrapper">
         <header class="main-header">
-            <a href="/"><img src="favicon.ico" alt="fork and a knife logo" width="30" height="30" srcset="favicon.ico"></a>
+            <a href="/"><img src="images/logo1x.png" alt="fork and a knife logo" width="30" height="30" 
+                 srcset="images/logo1x.png 1x, images/logo2x.png 2x, images/logo3x.png 3x"></a>
             <span class="company-name">The Delicious Diner</span>
         </header>
     </div>
@@ -52,37 +53,47 @@
         <div class="allcards">
             <section>
                 <img src="images/bowl.webp" alt="bowl of fruit" width="300" height="175">
-                <h2>Delicious Bowl of Fruit</h2>
-                <p>This delicious bowl of fruit is not only visually appealing but also packed with vitamins and minerals. It's a perfect snack for any time of the day!</p>
-                <a href="#">Learn More</a>
+                <div class="card-content">
+                    <h2>Delicious Bowl of Fruit</h2>
+                    <p>This delicious bowl of fruit is not only visually appealing but also packed with vitamins and minerals. It's a perfect snack for any time of the day!</p>
+                    <a href="#">Learn More</a>
+                </div>
             </section>
 
             <section>
                 <img src="images/burger_fries.webp" alt="burger with fries" width="300" height="175">
-                <h2>Burger with Fries</h2>
-                <p>This classic burger is made with a juicy beef patty, fresh lettuce, tomato, and cheese, served with a side of crispy fries. It's a satisfying meal that's sure to please!</p>
-                <a href="#">Learn More</a>
+                <div class="card-content">
+                    <h2>Burger with Fries</h2>
+                    <p>This classic burger is made with a juicy beef patty, fresh lettuce, tomato, and cheese, served with a side of crispy fries. It's a satisfying meal that's sure to please!</p>
+                    <a href="#">Learn More</a>
+                </div>
             </section>
 
             <section>
                 <img src="images/pasta.webp" alt="spaghetti" width="300" height="175">
-                <h2>Spaghetti</h2>
-                <p>A hearty plate of spaghetti topped with a rich and savory Bolognese sauce made from fresh tomatoes, ground beef, and aromatic herbs. Perfect for a comforting dinner!</p>
-                <a href="#">Learn More</a>
+                <div class="card-content">
+                    <h2>Spaghetti</h2>
+                    <p>A hearty plate of spaghetti topped with a rich and savory Bolognese sauce made from fresh tomatoes, ground beef, and aromatic herbs. Perfect for a comforting dinner!</p>
+                    <a href="#">Learn More</a>
+                </div>
             </section>
 
             <section>
                 <img src="images/pancakes.webp" alt="pancakes" width="300" height="175">
-                <h2>Pancakes</h2>
-                <p>Fluffy pancakes served with maple syrup and a side of fresh berries. A delightful breakfast treat!</p>
-                <a href="#">Learn More</a>
+                <div class="card-content">
+                    <h2>Pancakes</h2>
+                    <p>Fluffy pancakes served with maple syrup and a side of fresh berries. A delightful breakfast treat!</p>
+                    <a href="#">Learn More</a>
+                </div>
             </section>
 
             <section>
                 <img src="images/wings.webp" alt="wings" width="300" height="175">
-                <h2>Chicken Wings</h2>
-                <p>Crispy chicken wings tossed in your choice of sauce. Perfect for game day or any gathering!</p>
-                <a href="#">Learn More</a>
+                <div class="card-content">
+                    <h2>Chicken Wings</h2>
+                    <p>Crispy chicken wings tossed in your choice of sauce. Perfect for game day or any gathering!</p>
+                    <a href="#">Learn More</a>
+                </div>
             </section>
         </div>
         </main>
@@ -92,20 +103,39 @@
     <footer>
         <div class="footer-content">
             <section class="contact">
-                <p><ion-icon name="person-outline"></ion-icon>Palmer Charles</p>
-                <p><ion-icon name="home-outline"></ion-icon>Charles, LLC</p>
-                <p><ion-icon name="mail-outline"></ion-icon><a href="example@example.com">example@example.com</a></p>
-                <p><ion-icon name="globe-outline"></ion-icon><a href="http://example.com">example.com</a></p>
-                <p><ion-icon name="call-outline"></ion-icon><a href="tel:123-456-7890">123-456-7890</a></p>
+                <div class="contact-item">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <span>Palmer Charles</span>
+                </div>
+                <div class="contact-item">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span>Charles, LLC</span>
+                </div>
+                <div class="contact-item">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:example@example.com">example@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <ion-icon name="globe-outline"></ion-icon>
+                    <a href="http://example.com">example.com</a>
+                </div>
+                <div class="contact-item">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <a href="tel:123-456-7890">123-456-7890</a>
+                </div>
             </section>
             <section class="social">
-                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
-                <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                <div class="social-grid">
+                    <a href="#" class="social-icon"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" class="social-icon"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#" class="social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="#" class="social-icon"><ion-icon name="logo-youtube"></ion-icon></a>
+                    <a href="#" class="social-icon"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" class="social-icon"><ion-icon name="logo-pinterest"></ion-icon></a>
+                </div>
             </section>
             <section class="location">
+                <h3>The Delicious Diner</h3>
                 <address>
                     1234 Some St.<br>
                     City, State 12345<br>
@@ -114,7 +144,7 @@
             </section>
         </div>
 
-        <p class="legal">&copy; 2025 Design Thinking Inc. All rights reserved. 
+        <p class="legal">&copy; <span id="year">2025</span> The Delicious Diner. All rights reserved. 
             <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Clients</a></p>
     </footer>
 </div> <!-- end footer wrapper -->

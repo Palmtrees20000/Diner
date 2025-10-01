@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -328,14 +329,14 @@ body {
   height: 100%;
   font-family: "Josefin Sans", "Quicksand", "Moderustic", sans-serif;
   font-weight: 500;
-  color: #3D405B;
+  color: #548687;
 }
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid #3D405B;
+  border-bottom: 1px solid #548687;
   background: #f5f5f5;
-  color: #3D405B;
+  color: #548687;
 }
 
 header {
@@ -348,18 +349,18 @@ header {
 header .company-name {
   font-size: 1.6rem;
   font-weight: 500;
-  color: #3D405B;
+  color: #548687;
 }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 #navWrapper {
-  background-color: #3D405B;
+  background-color: #548687;
 }
 
 #menuButton {
   display: block;
   border: none;
-  background: #3D405B;
+  background: #548687;
   color: white;
   font-size: 1.5rem;
   padding: 1rem;
@@ -369,7 +370,7 @@ header .company-name {
   text-align: left;
 }
 #menuButton:hover {
-  background-color: rgb(40.5328947368, 42.5263157895, 60.4671052632);
+  background-color: rgb(64.4383561644, 102.7945205479, 103.5616438356);
 }
 #menuButton:focus {
   outline: 2px solid white;
@@ -384,7 +385,7 @@ nav ul#mainNav {
   margin: 0;
   list-style: none;
   display: none; /* Hidden by default on small screens */
-  background-color: #3D405B;
+  background-color: #548687;
   /* Show when open class is added */
 }
 nav ul#mainNav.open {
@@ -393,6 +394,7 @@ nav ul#mainNav.open {
 }
 nav ul#mainNav li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  /* Active navigation state - shared across all breakpoints */
 }
 nav ul#mainNav li:last-child {
   border-bottom: none;
@@ -403,10 +405,13 @@ nav ul#mainNav li a {
   text-decoration: none;
   display: block;
   padding: 1rem;
-  transition: background-color 0.3s ease;
+  border-radius: 16px; /* Shared across all breakpoints */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Enhanced transition for all breakpoints */
 }
 nav ul#mainNav li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
+  color: #ffff2e;
+  /* Remove color change on hover to avoid confusion with active state */
 }
 nav ul#mainNav li a:focus {
   outline: 2px solid white;
@@ -414,9 +419,9 @@ nav ul#mainNav li a:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 nav ul#mainNav li.active a {
-  color: #FFD700;
+  color: #ffff2e !important; /* Ensure active color takes precedence */
   font-weight: 500;
-  background-color: rgba(255, 215, 0, 0.1);
+  text-decoration: underline;
 }
 
 @keyframes slideDown {
@@ -432,10 +437,22 @@ nav ul#mainNav li.active a {
 h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #3D405B;
+  color: #548687;
   padding: 10px;
 }
 
+/* Paragraph before main element */
+#mainWrapper > p {
+  padding-left: 10px;
+  padding: 0.5rem 10px 0.5rem 10px;
+  color: #333;
+  line-height: 150%;
+}
+
+main {
+  margin-bottom: 3rem; /* Add space before footer */
+  padding-left: 10px; /* Add left padding to main */
+}
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
   font-size: 1.5rem;
@@ -450,6 +467,7 @@ main p {
 
 div.allcards {
   padding: 0 10px;
+  margin-bottom: 2rem; /* Additional space before footer */
   display: grid;
   grid-template-columns: 1fr; /* Single column on mobile */
   gap: 1.5rem;
@@ -477,7 +495,7 @@ div.allcards section h2 {
   background-color: transparent;
   font-size: 1.25rem;
   text-align: left;
-  color: #3D405B;
+  color: #548687;
   font-weight: 600;
   margin: 0;
   padding: 1rem 1.5rem 0.5rem 1.5rem;
@@ -491,7 +509,7 @@ div.allcards section p {
 }
 div.allcards section a {
   display: inline-block;
-  background-color: #3D405B;
+  background-color: #B0413E;
   color: white;
   padding: 0.75rem 1.5rem;
   text-align: center;
@@ -502,59 +520,114 @@ div.allcards section a {
   transition: background-color 0.2s ease;
 }
 div.allcards section a:hover {
-  background-color: rgb(40.5328947368, 42.5263157895, 60.4671052632);
+  background-color: rgb(138.2857142857, 51.0714285714, 48.7142857143);
 }
 div.allcards section a:focus {
-  outline: 2px solid #3D405B;
+  outline: 2px solid #B0413E;
   outline-offset: 2px;
 }
 
 #footerWrapper {
-  background-color: #3D405B;
-  color: white;
+  background-color: #548687; /* Light beige/cream background */
+  color: #333;
 }
 
 footer {
   font-size: 0.85rem;
-  padding: 1rem 10px;
+  padding: 2rem 10px;
   color: white;
   text-align: center;
   line-height: 150%;
 }
-footer a {
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+footer section.contact .contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+footer section.contact .contact-item ion-icon {
+  color: white; /* Red/orange color for icons */
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+footer section.contact .contact-item span, footer section.contact .contact-item a {
+  color: white;
+  text-decoration: none;
+}
+footer section.contact .contact-item a {
+  text-decoration: underline;
+}
+footer section.contact .contact-item a:hover {
+  color: #ffff2e;
+}
+footer section.social .social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* First row: 4 icons */
+  gap: 0.75rem;
+  justify-items: center;
+  max-width: 400px; /* Increased width for better spacing */
+  margin: 0 auto;
+  /* Position Instagram (5th icon) in column 2 of second row */
+  /* Position Pinterest (6th icon) in column 3 of second row */
+}
+footer section.social .social-grid .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  color: #666;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+footer section.social .social-grid .social-icon:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+footer section.social .social-grid .social-icon:nth-child(5) {
+  grid-column: 2;
+}
+footer section.social .social-grid .social-icon:nth-child(6) {
+  grid-column: 3;
+}
+footer section.location h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  color: white;
+  font-weight: 600;
+}
+footer section.location address {
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.4;
   color: white;
 }
-footer section.contact p {
-  font-size: 1.2rem;
-  margin: 0.5rem;
-}
-footer section.contact ion-icon {
-  color: red;
-  padding-right: 5px;
-}
-footer section.social {
-  display: flex;
-  justify-content: center;
-}
-footer section.social a {
-  display: block;
-  border: solid 1px white;
-  font-size: 2rem;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  color: purple;
-  line-height: 100%;
-}
-footer section.social a:hover {
-  background-color: white;
-}
-footer section.location {
-  font-size: 1.5rem;
-}
 footer p.legal {
-  margin: 0;
+  margin: 2rem 0 0 0;
   font-weight: 300;
   text-align: center;
+  font-size: 0.8rem;
+  color: black;
+  border-top: 1px solid #d0d0d0;
+  padding-top: 1.5rem;
+}
+footer p.legal a {
+  color: black;
+  text-decoration: underline;
+}
+footer p.legal a:hover {
+  color: white;
 }
 
 .parent {
@@ -570,40 +643,83 @@ footer p.legal {
   }
   nav ul#mainNav {
     display: none; /* Keep hidden by default */
+    /* Medium-specific overrides for navigation links */
   }
   nav ul#mainNav.open {
     display: block; /* Show when open class is added to ul */
   }
   nav ul#mainNav li a {
-    padding: 1rem 2rem;
-    border-radius: 16px;
-  }
-  nav ul#mainNav li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #FFD700;
-  }
-  nav ul#mainNav li a:focus {
-    outline: 2px solid white;
-    outline-offset: -2px;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  nav ul#mainNav li.active a {
-    color: #FFD700;
-    background-color: rgba(255, 215, 0, 0.1);
+    padding: 1rem 2rem; /* Larger padding for medium screens */
   }
   div.allcards {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr); /* Exactly 2 columns on medium screens */
+    gap: 2rem; /* 2rem gap between cards */
+    max-width: 900px; /* Slightly wider for better tablet layout */
+    margin: 0 auto 3rem auto; /* Center horizontally and add bottom margin */
+    padding: 0 2rem; /* Add side padding on medium screens */
+    justify-items: center; /* Center items within their grid cells */
+    /* When there's an odd number of cards, the last card will automatically 
+       center itself in the grid due to justify-items: center */
+  }
+  div.allcards section {
+    width: 100%; /* Cards take full width of their grid cell */
+    max-width: 400px; /* Constrain card width for better proportions */
   }
   div.allcards section img {
-    height: 180px; /* Slightly smaller on medium screens */
+    height: 200px; /* Consistent height across breakpoints */
   }
-  footer div {
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
+  /* Maintain 10px left padding on medium screens */
+  #mainWrapper > p {
+    padding-left: 10px;
+  }
+  main {
+    padding-left: 10px; /* Add left padding to main */
+  }
+  footer .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; /* Align all columns at the top */
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  footer section.contact {
+    flex: 1; /* Take equal space */
+    text-align: left; /* Left-aligned contact info */
+  }
+  footer section.contact .contact-item {
+    justify-content: flex-start; /* Left align contact items */
+    margin-bottom: 0.5rem;
+  }
+  footer section.social {
+    flex: 1; /* Take equal space */
+    display: flex;
+    justify-content: center;
+  }
+  footer section.social .social-grid {
+    display: grid; /* 2×3 grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 0.5rem;
+    max-width: 150px; /* Constrain grid size */
+    /* Remove special positioning - let icons flow naturally into grid */
+  }
+  footer section.social .social-grid .social-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+  footer section.location {
+    flex: 1; /* Take equal space */
+    text-align: right; /* Right align address */
+  }
+  footer section.location h3 {
+    text-align: right;
+  }
+  footer section.location address {
+    text-align: right;
+    font-style: italic; /* Italic text for address */
   }
 }
 @media only screen and (min-width: 60rem) {
@@ -624,27 +740,15 @@ footer p.legal {
     display: flex !important; /* Always show on large screens */
     justify-content: flex-end;
     background: transparent;
+    /* Large-screen specific overrides for navigation links */
+    /* Override active state font weight for large screens */
   }
   nav ul#mainNav li a {
-    padding: 1rem 2rem;
-    color: white;
-    font-weight: 600;
-    border-radius: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  nav ul#mainNav li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #FFD700;
-  }
-  nav ul#mainNav li a:focus {
-    outline: 2px solid white;
-    outline-offset: -2px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #FFD700;
+    padding: 1rem 2rem; /* Larger padding for desktop */
+    font-weight: 600; /* Bolder text for desktop */
   }
   nav ul#mainNav li.active a {
-    background-color: rgba(255, 215, 0, 0.1);
-    color: #FFD700;
+    font-weight: 600; /* Bolder active state for desktop */
   }
   .company-name {
     font-size: 2rem;
@@ -654,58 +758,81 @@ footer p.legal {
     padding-right: 1.5rem;
   }
   #navWrapper {
-    background: #3D405B;
+    background: #548687;
     width: 100%;
     padding: unset;
   }
-  nav ul li.active a {
-    background: none;
-    color: #FFD700;
-    padding: 1rem 2rem;
-    border-radius: 16px;
-  }
-  nav ul li a:hover {
-    background: none;
-    color: #FFD700;
-    padding: 1rem 2rem;
-    border-radius: 16px;
-  }
   div.allcards {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns on large screens */
+    gap: 2rem; /* Consistent 2rem gap */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 4rem auto; /* Center horizontally and add generous bottom margin */
+    padding: 0 3rem; /* Add side padding on large screens */
   }
   div.allcards section img {
-    height: 200px; /* Back to full height on large screens */
+    height: 200px; /* Consistent height across breakpoints */
+  }
+  /* Maintain 10px left padding on large screens */
+  #mainWrapper > p {
+    padding-left: 10px;
+  }
+  main {
+    padding-left: 10px; /* Add left padding to main */
   }
   footer {
-    max-width: 960px;
+    max-width: 1200px;
     margin: auto;
+    padding: 3rem 2rem;
   }
   footer .footer-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 3rem;
+    align-items: center; /* Vertically center all three columns */
+    gap: 4rem;
     text-align: left;
   }
-  footer .footer-content section.contact {
-    flex: 1;
+  footer section.contact {
+    flex: 1; /* Take equal space */
   }
-  footer .footer-content section.contact p {
+  footer section.contact .contact-item {
     justify-content: flex-start;
+    margin-bottom: 0.4rem;
   }
-  footer .footer-content section.location {
-    flex: 1;
-    text-align: center;
+  footer section.contact .contact-item ion-icon {
+    font-size: 1rem; /* Smaller icons on desktop */
   }
-  footer .footer-content section.location address {
-    font-style: italic;
+  footer section.contact .contact-item span, footer section.contact .contact-item a {
+    font-size: 0.9rem; /* Smaller text on desktop */
   }
-  footer .footer-content section.social {
-    flex: 1;
-    justify-content: flex-end;
+  footer section.social {
+    flex: 1; /* Take equal space */
+    display: flex;
+    justify-content: center;
+  }
+  footer section.social .social-grid {
+    display: flex; /* Single horizontal row */
+    flex-direction: row;
+    gap: 0.75rem;
+    max-width: none; /* Remove width restriction */
+  }
+  footer section.social .social-grid .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+  footer section.location {
+    flex: 1; /* Take equal space */
+    text-align: right;
+  }
+  footer section.location h3 {
+    font-size: 1.3rem; /* Larger text on desktop */
+    text-align: right;
+  }
+  footer section.location address {
+    font-size: 1rem; /* Larger text on desktop */
+    text-align: right;
+  }
+  footer p.legal {
+    margin-top: 3rem; /* More spacing on desktop */
   }
 }/*# sourceMappingURL=styles.css.map */

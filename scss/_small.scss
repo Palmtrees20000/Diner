@@ -98,10 +98,13 @@ nav {
                 text-decoration: none;
                 display: block;
                 padding: 1rem;
-                transition: background-color 0.3s ease;
+                border-radius: 16px; /* Shared across all breakpoints */
+                transition: background-color 0.3s ease, color 0.3s ease; /* Enhanced transition for all breakpoints */
                 
                 &:hover {
-                    background-color: rgba(255, 255, 255, 0.1);
+                    text-decoration: underline;
+                    color: #ffff2e;
+                    /* Remove color change on hover to avoid confusion with active state */
                 }
                 
                 &:focus {
@@ -111,10 +114,11 @@ nav {
                 }
             }
             
+            /* Active navigation state - shared across all breakpoints */
             &.active a {
-                color: #FFD700;
+                color: #ffff2e !important; /* Ensure active color takes precedence */
                 font-weight: $normalWeight;
-                background-color: rgba(255, 215, 0, 0.1);
+                text-decoration: underline;
             }
         }
     }
@@ -141,7 +145,18 @@ h1 {
     padding: $gutter;
 }
 
+/* Paragraph before main element */
+#mainWrapper > p {
+    padding-left: 10px;
+    padding: .5rem 10px .5rem 10px;
+    color: #333;
+    line-height: $leading;
+}
+
 main {
+    margin-bottom: 3rem; /* Add space before footer */
+    padding-left: 10px; /* Add left padding to main */
+    
     h1 {
         padding: 1rem $gutter .5rem $gutter;
         font-size: 1.5rem;
@@ -155,8 +170,11 @@ main {
     }
 } 
 
+
+
 div.allcards {
     padding: 0 $gutter;
+    margin-bottom: 2rem; /* Additional space before footer */
     display: grid;
     grid-template-columns: 1fr; /* Single column on mobile */
     gap: 1.5rem;
@@ -202,7 +220,7 @@ div.allcards {
         
         a {
             display: inline-block;
-            background-color: $primaryColor;
+            background-color: #B0413E;
             color: white;
             padding: 0.75rem 1.5rem;
             text-align: center;
@@ -213,11 +231,11 @@ div.allcards {
             transition: background-color 0.2s ease;
             
             &:hover {
-                background-color: darken($primaryColor, 10%);
+                background-color: darken(#B0413E, 10%);
             }
             
             &:focus {
-                outline: 2px solid $primaryColor;
+                outline: 2px solid #B0413E;
                 outline-offset: 2px;
             }
         }
@@ -227,52 +245,127 @@ div.allcards {
 // begin the footer
 
 #footerWrapper {
-    background-color: $primaryColor;
-    color: $greyColor;
+    background-color: #548687; /* Light beige/cream background */
+    color: #333;
 }
 
 footer {
     font-size: .85rem;
-    padding: 1rem $gutter;
-    color: $greyColor;
+    padding: 2rem $gutter;
+    color: white;
     text-align: center;
     line-height: $leading;
-    a {
-        color: $greyColor;
-    }
-    section.contact {
-        p {
-            font-size: 1.2rem;
-            margin: .5rem;
-        }
-        ion-icon {
-            color: red;
-            padding-right: 5px;
-        }
-    }
-    section.social {
+    
+    .footer-content {
         display: flex;
-        justify-content: center;
-        a {
-            display: block;
-            border: solid 1px $greyColor;
-            font-size: 2rem;
-            margin: .5rem;
-            padding: .5rem;
-            color: purple;
-            line-height: 100%;
-            &:hover {
-                background-color: $secondaryColor;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    section.contact {
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            
+            ion-icon {
+                color: white; /* Red/orange color for icons */
+                font-size: 1.2rem;
+                flex-shrink: 0;
+            }
+            
+            span, a {
+                color: white;
+                text-decoration: none;
+            }
+            
+            a {
+                text-decoration: underline;
+                
+                &:hover {
+                    color: #ffff2e;
+                }
             }
         }
     }
-    section.location {
-        font-size: 1.5rem;
+    
+    section.social {
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* First row: 4 icons */
+            gap: 0.75rem;
+            justify-items: center;
+            max-width: 400px; /* Increased width for better spacing */
+            margin: 0 auto;
+            
+            .social-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border: 1px solid #ccc;
+                background-color: #f5f5f5;
+                border-radius: 8px;
+                color: #666;
+                font-size: 1.5rem;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                
+                &:hover {
+                    background-color: #e0e0e0;
+                    color: #333;
+                }
+            }
+            
+            /* Position Instagram (5th icon) in column 2 of second row */
+            .social-icon:nth-child(5) {
+                grid-column: 2;
+            }
+            
+            /* Position Pinterest (6th icon) in column 3 of second row */
+            .social-icon:nth-child(6) {
+                grid-column: 3;
+            }
+        }
     }
+    
+    section.location {
+        h3 {
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem 0;
+            color: white;
+            font-weight: 600;
+        }
+        
+        address {
+            font-style: italic;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: white;
+        }
+    }
+    
     p.legal {
-        margin: 0;
+        margin: 2rem 0 0 0;
         font-weight: $lightWeight;
         text-align: center;
+        font-size: 0.8rem;
+        color: black;
+        border-top: 1px solid #d0d0d0;
+        padding-top: 1.5rem;
+        
+        a {
+            color: black;
+            text-decoration: underline;
+            
+            &:hover {
+                color: white;
+            }
+        }
     }
 }
 
