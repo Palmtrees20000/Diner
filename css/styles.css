@@ -419,7 +419,7 @@ nav ul#mainNav li a:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 nav ul#mainNav li.active a {
-  color: #ffff2e !important; /* Ensure active color takes precedence */
+  color: #FFF8DC !important; /* Cornsilk - much better contrast */
   font-weight: 500;
   text-decoration: underline;
 }
@@ -495,7 +495,7 @@ div.allcards section h2 {
   background-color: transparent;
   font-size: 1.25rem;
   text-align: left;
-  color: #548687;
+  color: #473335; /* Dark gray for better contrast */
   font-weight: 600;
   margin: 0;
   padding: 1rem 1.5rem 0.5rem 1.5rem;
@@ -535,7 +535,7 @@ div.allcards section a:focus {
 footer {
   font-size: 0.85rem;
   padding: 2rem 10px;
-  color: white;
+  color: black;
   text-align: center;
   line-height: 150%;
 }
@@ -553,19 +553,19 @@ footer section.contact .contact-item {
   margin-bottom: 0.75rem;
 }
 footer section.contact .contact-item ion-icon {
-  color: white; /* Red/orange color for icons */
+  color: black; /* Icons in black */
   font-size: 1.2rem;
   flex-shrink: 0;
 }
 footer section.contact .contact-item span, footer section.contact .contact-item a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 footer section.contact .contact-item a {
   text-decoration: underline;
 }
 footer section.contact .contact-item a:hover {
-  color: #ffff2e;
+  color: white;
 }
 footer section.social .social-grid {
   display: grid;
@@ -604,14 +604,14 @@ footer section.social .social-grid .social-icon:nth-child(6) {
 footer section.location h3 {
   font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
-  color: white;
+  color: black;
   font-weight: 600;
 }
 footer section.location address {
   font-style: italic;
   font-size: 0.9rem;
   line-height: 1.4;
-  color: white;
+  color: black;
 }
 footer p.legal {
   margin: 2rem 0 0 0;
