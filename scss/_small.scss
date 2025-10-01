@@ -116,7 +116,7 @@ nav {
             
             /* Active navigation state - shared across all breakpoints */
             &.active a {
-                color: #FFFFFF !important; /* Pure white for maximum contrast */
+                color: black !important; /* Pure black for maximum contrast */
                 font-weight: $normalWeight;
                 text-decoration: underline;
             }

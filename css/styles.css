@@ -419,7 +419,7 @@ nav ul#mainNav li a:focus {
   color: #FFFFFF;
 }
 nav ul#mainNav li.active a {
-  color: #FFFFFF !important; /* Pure white for maximum contrast */
+  color: black !important; /* Pure black for maximum contrast */
   font-weight: 500;
   text-decoration: underline;
 }
