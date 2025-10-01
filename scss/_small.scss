@@ -93,7 +93,7 @@ nav {
             }
             
             a {
-                color: black;
+                color: white;
                 text-align: left;
                 text-decoration: none;
                 display: block;
@@ -103,7 +103,7 @@ nav {
                 
                 &:hover {
                     text-decoration: underline;
-                    color: white;
+                    color: #FFFEF7;
                     /* Remove color change on hover to avoid confusion with active state */
                 }
                 
@@ -111,13 +111,13 @@ nav {
                     outline: 2px solid white;
                     outline-offset: -2px;
                     background-color: rgba(255, 255, 255, 0.1);
-                    color: white;
+                    color: #FFFEF7;
                 }
             }
             
             /* Active navigation state - shared across all breakpoints */
             &.active a {
-                color: white !important; /* White for active state */
+                color: #F2CC8F !important; /* Very light cream - excellent contrast */
                 font-weight: $normalWeight;
                 text-decoration: underline;
             }
