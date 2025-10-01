@@ -93,7 +93,7 @@ nav {
             }
             
             a {
-                color: #FFFFFF;  /* Pure white for maximum contrast */
+                color: #FFFEF7;  /* Very light cream - excellent contrast on teal */
                 text-align: left;
                 text-decoration: none;
                 display: block;
@@ -103,6 +103,7 @@ nav {
                 
                 &:hover {
                     color: #FFFFFF;
+                    background-color: rgba(255, 255, 255, 0.15); /* Light background for hover */
                     text-decoration: underline;
                 }
                 
@@ -116,7 +117,8 @@ nav {
             
             /* Active navigation state - shared across all breakpoints */
             &.active a {
-                color: black !important; /* Pure black for maximum contrast */
+                color: #FFFFFF !important; /* Pure white for active state */
+                background-color: rgba(255, 255, 255, 0.2) !important; /* Light background for active state */
                 font-weight: $normalWeight;
                 text-decoration: underline;
             }
