@@ -547,6 +547,12 @@ footer .footer-content {
   gap: 2rem;
   align-items: center;
 }
+footer section.contact h3 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: black;
+  font-weight: 600;
+}
 footer section.contact .contact-item {
   display: flex;
   align-items: center;
@@ -568,6 +574,12 @@ footer section.contact .contact-item a {
 }
 footer section.contact .contact-item a:hover {
   color: white;
+}
+footer section.social h3 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: black;
+  font-weight: 600;
 }
 footer section.social .social-grid {
   display: grid;
